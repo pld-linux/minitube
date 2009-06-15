@@ -1,12 +1,10 @@
---- minitube-orig/src/MediaView.h	2009-05-12 11:45:13.000000000 +0200
-+++ minitube/src/MediaView.h	2009-05-28 14:47:43.761187389 +0200
-@@ -3,9 +3,40 @@
+--- minitube-orig/src/MediaView.h	2009-06-15 20:35:39.363766562 +0200
++++ minitube/src/MediaView.h	2009-06-15 20:36:40.581035703 +0200
+@@ -3,7 +3,38 @@
  
  #include <QtGui>
  #include <QtNetwork>
 -#include <phonon>
- #include "View.h"
- #include "ListModel.h"
 +#include <phonon/abstractaudiooutput.h>
 +#include <phonon/abstractmediastream.h>
 +#include <phonon/abstractvideooutput.h>
@@ -39,9 +37,10 @@
 +#include <phonon/volumefadereffect.h>
 +#include <phonon/volumefaderinterface.h>
 +#include <phonon/volumeslider.h>
- 
- class MediaView : public QWidget, public View {
-     Q_OBJECT
+ #include "View.h"
+ #include "ListModel.h"
+ #include "thaction.h"
+
 --- minitube-orig/src/MainWindow.h	2009-06-03 15:03:25.595920141 +0200
 +++ minitube/src/MainWindow.h	2009-06-03 15:04:28.305913719 +0200
 @@ -4,7 +4,39 @@
@@ -85,3 +84,45 @@
  #include "View.h"
  #include "SearchView.h"
  #include "MediaView.h"
+--- minitube-orig/src/videowidget.h	2009-06-15 20:35:39.361703694 +0200
++++ minitube/src/videowidget.h	2009-06-15 20:39:04.303565480 +0200
+@@ -2,7 +2,38 @@
+ #define VIDEOWIDGET_H
+ 
+ #include <QtGui>
+-#include <phonon>
++#include <phonon/abstractaudiooutput.h>
++#include <phonon/abstractmediastream.h>
++#include <phonon/abstractvideooutput.h>
++#include <phonon/addoninterface.h>
++#include <phonon/audiooutput.h>
++#include <phonon/audiooutputinterface.h>
++#include <phonon/backendcapabilities.h>
++#include <phonon/backendinterface.h>
++#include <phonon/effect.h>
++#include <phonon/effectinterface.h>
++#include <phonon/effectparameter.h>
++#include <phonon/effectwidget.h>
++#include <phonon/mediacontroller.h>
++#include <phonon/medianode.h>
++#include <phonon/mediaobject.h>
++#include <phonon/mediaobjectinterface.h>
++#include <phonon/mediasource.h>
++#include <phonon/objectdescription.h>
++#include <phonon/objectdescriptionmodel.h>
++#include <phonon/path.h>
++#include <phonon/phonondefs.h>
++#include <phonon/phonon_export.h>
++#include <phonon/phononnamespace.h>
++#include <phonon/platformplugin.h>
++#include <phonon/seekslider.h>
++#include <phonon/streaminterface.h>
++#include <phonon/videoplayer.h>
++#include <phonon/videowidget.h>
++#include <phonon/videowidgetinterface.h>
++#include <phonon/volumefadereffect.h>
++#include <phonon/volumefaderinterface.h>
++#include <phonon/volumeslider.h>
+ 
+ class VideoWidget : public Phonon::VideoWidget {
+ 
