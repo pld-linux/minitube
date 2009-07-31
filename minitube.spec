@@ -1,16 +1,17 @@
 Summary:	Minitube is a native YouTube client
 Summary(hu.UTF-8):	Minitube egy natív YouTube kliens
 Name:		minitube
-Version:	0.4
+Version:	0.5
 Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://flavio.tordini.org/files/minitube/%{name}-src-%{version}.tar.gz
-# Source0-md5:	283cbe662b43dee71acacfafd8ae1abc
+# Source0-md5:	088c8f96590024e61f489c4189346c90
 URL:		http://flavio.tordini.org/minitube
 BuildRequires:	QtCore-devel
 BuildRequires:	phonon-devel
 BuildRequires:	qt4-build >= 4.3.3-3
+BuildRequires:	qt4-linguist >= 4.3.3-3
 BuildRequires:	qt4-qmake >= 4.3.3-3
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	sed >= 4.0
