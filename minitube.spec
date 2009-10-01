@@ -1,12 +1,12 @@
 Summary:	Minitube is a native YouTube client
 Summary(hu.UTF-8):	Minitube egy natív YouTube kliens
 Name:		minitube
-Version:	0.5
-Release:	0.1
+Version:	0.6.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://flavio.tordini.org/files/minitube/%{name}-src-%{version}.tar.gz
-# Source0-md5:	088c8f96590024e61f489c4189346c90
+# Source0-md5:	0e99d4822319abb243515f2829bfacad
 URL:		http://flavio.tordini.org/minitube
 BuildRequires:	QtCore-devel
 BuildRequires:	phonon-devel
@@ -14,7 +14,6 @@ BuildRequires:	qt4-build >= 4.3.3-3
 BuildRequires:	qt4-linguist >= 4.3.3-3
 BuildRequires:	qt4-qmake >= 4.3.3-3
 BuildRequires:	rpmbuild(macros) >= 1.129
-BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,17 +29,16 @@ Player-re.
 
 %prep
 %setup -q -n %{name}
-%{__sed} -i 's@\":/images\/\([^"]*\)@"%{_iconsdir}/hicolor/scalable/apps/minitube/\1@' src/*.cpp
 
 %build
-qmake-qt4
+qmake-qt4 PREFIX=%{_prefix}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir} $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/scalable/apps/minitube
-install build/target/%{name} $RPM_BUILD_ROOT%{_bindir}
-install images/* $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/scalable/apps/minitube
+
+INSTALL_ROOT=$RPM_BUILD_ROOT \
+    %{__make} install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -48,4 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{name}
-%{_iconsdir}/hicolor/scalable/apps/minitube
+%{_datadir}/%{name}
+%{_desktopdir}/%{name}.desktop
+%{_iconsdir}/*/*/apps/%{name}.*
