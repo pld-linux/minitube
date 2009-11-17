@@ -9,6 +9,7 @@ Source0:	http://flavio.tordini.org/files/minitube/%{name}-src-%{version}.tar.gz
 # Source0-md5:	0e99d4822319abb243515f2829bfacad
 URL:		http://flavio.tordini.org/minitube
 BuildRequires:	QtCore-devel
+BuildRequires:	QtNetwork-devel
 BuildRequires:	phonon-devel
 BuildRequires:	qt4-build >= 4.3.3-3
 BuildRequires:	qt4-linguist >= 4.3.3-3
