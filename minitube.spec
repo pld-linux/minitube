@@ -1,5 +1,3 @@
-# TODO:
-# - A required codec is missing. You need to install the following codec(s) to play this content: H.264
 Summary:	Minitube is a native YouTube client
 Summary(hu.UTF-8):	Minitube egy natív YouTube kliens
 Name:		minitube
@@ -17,6 +15,9 @@ BuildRequires:	qt4-build >= 4.3.3-3
 BuildRequires:	qt4-linguist >= 4.3.3-3
 BuildRequires:	qt4-qmake >= 4.3.3-3
 BuildRequires:	rpmbuild(macros) >= 1.129
+Requires:	gstreamer-aac
+Requires:	gstreamer-ffmpeg
+Requires:	phonon-backend-gstreamer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
