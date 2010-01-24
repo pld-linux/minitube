@@ -1,12 +1,14 @@
+# TODO:
+# - A required codec is missing. You need to install the following codec(s) to play this content: H.264
 Summary:	Minitube is a native YouTube client
 Summary(hu.UTF-8):	Minitube egy natív YouTube kliens
 Name:		minitube
-Version:	0.6.1
+Version:	0.9
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://flavio.tordini.org/files/minitube/%{name}-src-%{version}.tar.gz
-# Source0-md5:	0e99d4822319abb243515f2829bfacad
+Source0:	http://flavio.tordini.org/files/minitube/%{name}-%{version}.tar.gz
+# Source0-md5:	525b4f75fa883633124183ae9015b6ed
 URL:		http://flavio.tordini.org/minitube
 BuildRequires:	QtCore-devel
 BuildRequires:	QtNetwork-devel
