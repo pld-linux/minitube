@@ -2,7 +2,7 @@ Summary:	Minitube is a native YouTube client
 Summary(hu.UTF-8):	Minitube egy natív YouTube kliens
 Name:		minitube
 Version:	1.3
-Release:	1
+Release:	1.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://flavio.tordini.org/files/minitube/%{name}-%{version}.tar.gz
@@ -42,6 +42,9 @@ rm -rf $RPM_BUILD_ROOT
 
 INSTALL_ROOT=$RPM_BUILD_ROOT \
     %{__make} install
+
+# req /usr/share/icons/hicolor/512x512/apps not found
+rm -rf $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/512x512/apps
 
 %clean
 rm -rf $RPM_BUILD_ROOT
