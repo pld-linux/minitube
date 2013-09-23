@@ -1,9 +1,0 @@
---- minitube/minitube.desktop~	2010-05-03 23:08:27.000000000 +0200
-+++ minitube/minitube.desktop	2010-05-12 14:56:16.490632360 +0200
-@@ -14,5 +14,5 @@
- Terminal=false
- Type=Application
- Icon=minitube
--Categories=Application;Qt;AudioVideo;Video;
-+Categories=Application;Qt;AudioVideo;Video;Player;
- StartupNotify=true
