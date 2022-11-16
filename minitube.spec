@@ -9,7 +9,7 @@ Summary:	Minitube is a native YouTube client
 Summary(hu.UTF-8):	Minitube egy natív YouTube kliens
 Name:		minitube
 Version:	3.9.3
-Release:	1
+Release:	2
 License:	GPL v3
 Group:		X11/Applications/Multimedia
 Source0:	https://github.com/flaviotordini/minitube/archive/%{version}/%{name}-%{version}.tar.gz
