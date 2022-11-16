@@ -26,6 +26,7 @@ Source5:	https://github.com/flaviotordini/promises/archive/%{promises_version}/p
 # Source5-md5:	d6db801932cd123563bec343ee05bd59
 Source6:	https://github.com/flaviotordini/updater/archive/%{updater_version}/updater-%{updater_version}.tar.gz
 # Source6-md5:	6e531f6cfb1c64f5261f73b9728753e1
+Patch0:		mpv0.34.patch
 URL:		https://flavio.tordini.org/minitube
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5DBus-devel
@@ -62,6 +63,8 @@ for dir in http idle js media promises updater ; do
 	%{__mv} $dir-*/* lib/$dir/
 	%{__rm} -r $dir-*
 done
+
+%patch0 -p1
 
 %build
 %{qmake_qt5}
